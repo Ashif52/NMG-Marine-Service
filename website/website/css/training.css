@@ -1,0 +1,89 @@
+/* ============================================
+   TRAINING PAGE STYLES
+   ============================================ */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.course-card {
+    background: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.course-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+}
+
+/* Faculty Grid */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.faculty-card {
+    background: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.faculty-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.faculty-image-placeholder {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.faculty-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+}
+
+.faculty-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.faculty-card h4 {
+    font-size: var(--font-size-base);
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.faculty-card p {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    text-align: left;
+    line-height: 1.6;
+}

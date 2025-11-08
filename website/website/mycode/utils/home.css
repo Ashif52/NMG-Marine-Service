@@ -1,0 +1,255 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    background-image: 
+        linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(59, 130, 246, 0.9) 100%),
+        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(96, 165, 250, 0.3) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+   
+    gap: 10px;
+}
+
+.hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(65%);
+    }
+
+.hero-content h5{
+    font-size: var(--font-size-4xl);    	
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    color: var(--bg-light);
+    padding-left: 30px;
+}
+
+.hero-content h1{
+    padding-left: 30px;
+    font-size: var(--font-size-6xl);
+    color: var(--bg-light);
+    letter-spacing: var(--spacing-xs);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.hero-content p{
+    padding-left: 30px;
+    font-size: var(--font-size-xl);
+    color: var(--bg-light);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+
+.ship-shape{
+    display: flex;
+    flex-direction: column;
+}
+.ship-shape-inner{
+    display: flex;
+}
+.shape-3{
+    margin-left: 5px;
+    width: 40px;
+    height: 25px;
+    border-bottom-right-radius: 100%;
+    background-color: var(--bg-light);
+}
+.shape-2{
+    margin-left: 15px;
+    width: 10px;
+    height: 50px;
+    background-color: var(--bg-light);
+}
+.shape-1{
+    width: 40%;
+    height: 40px;
+    border-top-right-radius: 200%;
+    background-color: var(--bg-light);
+}
+
+
+/* About us section */
+
+.overview,.fleet-section{
+    display: flex;
+}
+.right-overview{
+    background-image: url('../resources/images/home-about.avif');   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 2;
+    width: 100%;
+    height: 90vh;
+}
+
+.left-overview{
+    flex: 1.25;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.left-overview h1{
+    font-size: var(--font-size-6xl);
+}
+
+.left-overview h1 span{
+    font-weight: 100;
+}
+
+.left-overview p{
+    font-size: var(--font-size-xl);
+    text-align: justify;
+}
+
+
+/* Services Section */
+.services {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.service-card {
+    background: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    box-shadow: var(--shadow-base);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    font-size: var(--font-size-base);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+#technical{
+  width: 48px;
+  height: 48px;
+  background: url('../resources/svgs/technical.svg') no-repeat center;
+  background-size: cover;
+  filter: brightness(0) invert(1);
+}
+
+
+
+
+#vessel{
+  width: 48px;
+  height: 48px;
+  background: url('../resources/svgs/vessel.svg') no-repeat center;
+  background-size: cover;
+  filter: brightness(0) invert(1);
+}
+
+
+#ship-chatter{
+  width: 48px;
+  height: 48px;
+  background: url('../resources/svgs/ship-chatering.svg') no-repeat center;
+  background-size: cover;
+  filter: brightness(0) invert(1);
+}
+
+
+
+.fleet-img-div{
+    background-image: url('../resources/images/fleet.avif');   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 2;
+    width: 100%;
+    height: 90vh;
+}
+
+.fleet-content{
+    flex: 1.25;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.fleet-content ul{
+    list-style: none;
+    padding-left: 0; 
+}
+.fleet-item{
+    font-size: var(--font-size-xl);
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+
+}
+
+.fleet-item::before{
+    content: "➤"; /* Unicode arrow */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color); /* blue */
+    font-size: 14px;
+}
+
+.fleet-content h1{
+    font-size: var(--font-size-5xl);
+}
+
