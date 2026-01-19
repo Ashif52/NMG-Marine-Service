@@ -1,0 +1,363 @@
+main {
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+/* ===============================
+   Section 1: Hero
+   =============================== */
+.services-hero {
+    min-height: 80vh;
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.12), transparent 55%),
+        linear-gradient(135deg, #f9fafb, #eff6ff);
+    box-shadow: var(--shadow-lg);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero-text {
+    flex: 1.2;
+    max-width: 720px;
+    position: relative;
+    z-index: 1;
+}
+
+.services-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.services-hero-text h1 {
+    font-size: var(--font-size-4xl);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.services-hero-body {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    margin-top: var(--spacing-sm);
+    text-align: justify;
+}
+
+.services-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-hero-image img {
+    max-width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--shadow-xl);
+    object-fit: cover;
+}
+
+/* ===============================
+   Section 2: Services Grid
+   =============================== */
+.services-grid-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    background-color: var(--bg-light);
+}
+
+.services-section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.services-section-heading h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.services-section-heading p {
+    color: var(--text-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(30, 64, 175, 0.06));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card-media {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.service-card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0));
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.service-card-media img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card-media img {
+    transform: scale(1.05);
+}
+
+.service-card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary-dark);
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-md) var(--spacing-lg) 0 var(--spacing-lg);
+}
+
+.service-card ul {
+    list-style: disc;
+    padding-left: 2rem;
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    position: relative;
+    z-index: 1;
+    padding-right: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+.service-card li + li {
+    margin-top: var(--spacing-xs);
+}
+
+/* ===============================
+   Section 3: Get a Quote
+   =============================== */
+.quote-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.26), transparent 60%),
+        linear-gradient(145deg, #020617, #0b1120 55%, #1e293b 100%);
+}
+
+.quote-section::before,
+.quote-section::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 999px;
+    opacity: 0.55;
+    filter: blur(6px);
+    pointer-events: none;
+}
+
+.quote-section::before {
+    top: -140px;
+    left: -120px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.7), transparent 65%);
+}
+
+.quote-section::after {
+    bottom: -160px;
+    right: -120px;
+    background: radial-gradient(circle at center, rgba(8, 47, 73, 0.8), transparent 65%);
+}
+
+.quote-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.75);
+    border-radius: 20px;
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-xl);
+    color: #f9fafb;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.quote-card h2 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quote-card p {
+    color: #e5e7eb;
+}
+
+.quote-card form {
+    margin-top: var(--spacing-lg);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-md);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-field label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.form-field input {
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    padding: 0.6rem 0.75rem;
+    font-size: var(--font-size-sm);
+    outline: none;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.form-field input::placeholder {
+    color: rgba(148, 163, 184, 0.9);
+}
+
+.form-field input:focus {
+    border-color: #bfdbfe;
+    box-shadow: 0 0 0 1px rgba(191, 219, 254, 0.7);
+    background-color: rgba(15, 23, 42, 0.8);
+    color: #e5e7eb;
+}
+
+.error-message {
+    min-height: 1rem;
+    font-size: var(--font-size-xs);
+    color: #fecaca;
+}
+
+.form-field.has-error input {
+    border-color: #fecaca;
+    box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.5);
+}
+
+.btn-3 {
+    margin-top: var(--spacing-md);
+}
+
+.form-status {
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    min-height: 1.1rem;
+}
+
+.form-status.success {
+    color: #bbf7d0;
+}
+
+.form-status.error {
+    color: #fecaca;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 960px) {
+    .services-hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .services-hero-text {
+        max-width: 100%;
+    }
+
+    .services-hero-body {
+        text-align: justify;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quote-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .services-hero {
+        padding : var(--spacing-md);
+        
+    }
+
+    .services-hero-text h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .services-grid-section {
+        padding-top: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

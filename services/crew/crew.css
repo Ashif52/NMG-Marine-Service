@@ -1,0 +1,297 @@
+main {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+/* ===============================
+   Hero
+   =============================== */
+.crew-hero {
+    position: relative;
+    min-height: 80vh;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-xl);
+    background: #020617;
+}
+
+.crew-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(110deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.9) 38%, rgba(15, 23, 42, 0.55) 60%, rgba(15, 23, 42, 0.0) 100%);
+    z-index: 1;
+}
+
+.crew-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 4fr);
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl);
+    align-items: center;
+}
+
+.crew-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../resources/images/hero3.png') center/cover no-repeat;
+    opacity: 0.55;
+}
+
+.crew-hero-text {
+    position: relative;
+    color: #e5e7eb;
+}
+
+.crew-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.crew-hero-text h1 {
+    font-size: var(--font-size-4xl);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+}
+
+.crew-hero-body {
+    font-size: var(--font-size-sm);
+    color: #e5e7eb;
+}
+
+.crew-hero-body + .crew-hero-body {
+    margin-top: 0.25rem;
+}
+
+.crew-hero-cta {
+    margin-top: var(--spacing-md);
+}
+
+.crew-hero-image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.crew-hero-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    object-fit: cover;
+}
+
+/* ===============================
+   Crew Story
+   =============================== */
+.crew-story-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+}
+
+.crew-story-layout {
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+}
+
+.crew-story-text {
+    flex: 3;
+}
+
+.crew-story-text h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.crew-story-text p {
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.crew-story-highlight {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.crew-highlight-card {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.crew-highlight-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.crew-highlight-card ul {
+    list-style: disc;
+    padding-left: 1.3rem;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.crew-highlight-card li + li {
+    margin-top: 0.25rem;
+}
+
+/* ===============================
+   Crew Services
+   =============================== */
+.crew-services-section {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.12), transparent 55%),
+        linear-gradient(135deg, #f9fafb, #eff6ff);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.crew-section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.crew-section-header h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.crew-section-header p {
+    color: var(--text-light);
+}
+
+.crew-services-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.crew-service-card {
+    background-color: var(--bg-white);
+    border-radius: 18px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.crew-service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(37, 99, 235, 0.06));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: 0;
+}
+
+.crew-service-card h3 {
+    position: relative;
+    z-index: 1;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.crew-service-desc {
+    position: relative;
+    z-index: 1;
+    font-size: var(--font-size-xs);
+    color: var(--text-light);
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow), opacity var(--transition-slow), margin-top var(--transition-base);
+}
+
+.crew-service-card.is-open .crew-service-desc {
+    margin-top: var(--spacing-xs);
+    max-height: 6rem;
+    opacity: 1;
+}
+
+.crew-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+    background-color: #ffffff;
+}
+
+.crew-service-card:hover::before {
+    opacity: 1;
+}
+
+/* Reveal-on-scroll (reuse pattern) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 960px) {
+    .crew-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        padding: var(--spacing-xl);
+        row-gap: var(--spacing-lg);
+    }
+
+    .crew-hero-image {
+        justify-content: center;
+    }
+
+    .crew-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .crew-story-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: var(--spacing-xl) var(--spacing-sm);
+    }
+
+    .crew-hero-text h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .crew-services-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

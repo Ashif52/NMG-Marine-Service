@@ -1,0 +1,593 @@
+main {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.fleet-container {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* ===============================
+   Hero Section
+   =============================== */
+.fleet-hero {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl);
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(30, 64, 175, 0.12), transparent 55%),
+        linear-gradient(135deg, #f9fafb, #eff6ff);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.fleet-hero::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(59, 130, 246, 0.1), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(30, 64, 175, 0.08), transparent 60%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.fleet-hero-wrapper {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+
+.fleet-hero-content {
+    flex: 1.2;
+    max-width: 700px;
+}
+
+.fleet-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.fleet-hero-content h1 {
+    font-size: var(--font-size-4xl);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.fleet-hero-desc {
+    font-size: var(--font-size-base);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.fleet-hero-cta {
+    margin-top: var(--spacing-md);
+}
+
+.fleet-hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.fleet-hero-image-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 999px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.15), transparent 65%);
+    filter: blur(6px);
+    z-index: 0;
+}
+
+.fleet-hero-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===============================
+   Fleet Overview Section
+   =============================== */
+.fleet-overview {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 700;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.overview-card {
+    background-color: var(--bg-white);
+    border-radius: 18px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.overview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.overview-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+}
+
+.overview-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.overview-card p {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* ===============================
+   Fleet Title Section
+   =============================== */
+.fleet-title-section {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    text-align: center;
+}
+
+.fleet-main-title {
+    font-size: var(--font-size-4xl);
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* ===============================
+   Fleet Carousel Section
+   =============================== */
+.fleet-carousel-section {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.carousel-wrapper {
+    position: relative;
+    margin-bottom: var(--spacing-xl);
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    background: linear-gradient(135deg, #1a2a4a 0%, #0f1f3a 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    min-height: 520px;
+    padding: var(--spacing-xl);
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-xl);
+    animation: slideIn 0.6s ease-in-out;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel-image-side {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+}
+
+.carousel-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-content-side {
+    flex: 1;
+    padding: var(--spacing-lg);
+    color: white;
+    overflow-y: auto;
+    max-height: 480px;
+}
+
+.carousel-content-side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.carousel-content-side::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.carousel-content-side::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 10px;
+}
+
+.carousel-content-side::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.8);
+}
+
+.carousel-title {
+    font-size: var(--font-size-3xl);
+    color: #fbbf24;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+}
+
+.carousel-subtitle {
+    font-size: var(--font-size-base);
+    color: #cbd5f5;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.carousel-text {
+    color: #e5e7eb;
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+}
+
+.carousel-text p {
+    margin-bottom: var(--spacing-md);
+}
+
+.carousel-text p:last-child {
+    margin-bottom: 0;
+}
+
+.carousel-text strong {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.vessel-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.vessel-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #e5e7eb;
+    font-size: var(--font-size-sm);
+}
+
+.vessel-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #fbbf24;
+    font-weight: 700;
+    font-size: var(--font-size-base);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fbbf24;
+    color: #0f1f3a;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: var(--font-size-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.3);
+    font-weight: 700;
+}
+
+.carousel-nav:hover {
+    background: #fcd34d;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 12px 32px rgba(251, 191, 36, 0.5);
+}
+
+.carousel-nav:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+.carousel-prev {
+    left: -28px;
+}
+
+.carousel-next {
+    right: -28px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: var(--spacing-lg);
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fbbf24;
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.dot.active {
+    background: #fbbf24;
+    transform: scale(1.3);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.dot:hover {
+    background: rgba(251, 191, 36, 0.6);
+}
+
+/* ===============================
+   Fleet Management Section
+   =============================== */
+.fleet-management {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background: linear-gradient(135deg, #f9fafb, #eff6ff);
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.management-card {
+    background: var(--bg-white);
+    border-radius: 18px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.management-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary-color);
+}
+
+.management-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.management-card p {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* ===============================
+   Reveal on Scroll
+   =============================== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+@media (max-width: 960px) {
+    .fleet-hero-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .carousel-container {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--spacing-lg);
+    }
+
+    .carousel-slide.active {
+        flex-direction: column;
+    }
+
+    .carousel-image-side {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: 320px;
+    }
+
+    .carousel-content-side {
+        flex: 1;
+        max-height: 400px;
+        padding: var(--spacing-lg);
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        width: 48px;
+        height: 48px;
+        font-size: var(--font-size-base);
+    }
+
+    .carousel-prev {
+        left: 8px;
+    }
+
+    .carousel-next {
+        right: 8px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .btn-3 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .fleet-hero {
+        padding: var(--spacing-lg);
+    }
+
+    .fleet-hero-content h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .fleet-main-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .fleet-overview,
+    .fleet-carousel-section,
+    .fleet-management,
+    .fleet-cta-section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .carousel-container {
+        min-height: auto;
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .carousel-image-side {
+        min-height: 280px;
+    }
+
+    .carousel-content-side {
+        max-height: 350px;
+        padding: var(--spacing-md);
+    }
+
+    .carousel-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .carousel-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .carousel-text {
+        font-size: var(--font-size-xs);
+        line-height: 1.6;
+    }
+
+    .carousel-text p {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        width: 44px;
+        height: 44px;
+        font-size: var(--font-size-base);
+    }
+
+    .carousel-prev {
+        left: -22px;
+    }
+
+    .carousel-next {
+        right: -22px;
+    }
+
+    .overview-grid,
+    .management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-content {
+        padding: var(--spacing-lg);
+    }
+
+    .cta-content h2 {
+        font-size: var(--font-size-2xl);
+    }
+}
